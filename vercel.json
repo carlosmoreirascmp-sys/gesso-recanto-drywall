@@ -1,6 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ],
+      "destination": "/materiais/:path*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
