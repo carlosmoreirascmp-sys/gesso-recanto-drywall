@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ],
+      "destination": "/materiais/index.html"
+    },
+    {
       "source": "/:path*",
       "has": [
         {
