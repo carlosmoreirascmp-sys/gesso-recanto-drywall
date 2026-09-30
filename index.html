@@ -471,11 +471,36 @@
     }
 
     .process-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, .78fr) minmax(540px, 1.22fr);
-      gap: clamp(60px, 8vw, 120px);
-      align-items: start;
+      display: block;
     }
+
+    .process .section-title { max-width: 1040px; font-size: clamp(1.8rem, 3.5vw, 3rem); }
+
+    .delivery-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 36px;
+    }
+
+    .delivery-gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(142,212,245,.25);
+      border-radius: 16px;
+      background: #102737;
+    }
+
+    .delivery-gallery img, .delivery-gallery video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: #07131e;
+    }
+
+    .delivery-gallery img { object-fit: cover; }
+    .delivery-gallery video { object-fit: contain; }
+    .delivery-gallery figcaption { padding: 16px 18px; color: #fff; font-size: .95rem; font-weight: 750; }
 
     .process .section-kicker { color: #8ed4f5; }
     .process .section-title { color: #fff; }
@@ -793,7 +818,7 @@
       .choice-panel { grid-template-columns: 1fr; }
       .choice-panel a { min-height: 70px; border-right: 0; border-bottom: 1px solid #dce5eb; }
       .choice-panel p { min-height: 78px; }
-      .process-grid { grid-template-columns: 1fr; gap: 42px; }
+      .delivery-gallery { grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
       .questions { min-height: auto; background-position: 34% center; }
       .questions-inner { grid-template-columns: 1fr; gap: 38px; padding: 72px 0; }
       .image-note { align-self: auto; margin: 160px 0 0; }
@@ -896,22 +921,29 @@
     <section class="process" aria-labelledby="processo-title">
       <div class="shell process-grid">
         <div>
-          <p class="section-kicker">Sem formulário comprido</p>
-          <h2 class="section-title" id="processo-title">Em 3 mensagens, seu orçamento já sai do zero.</h2>
-          <p class="section-lead">Quanto mais contexto você mandar, mais objetiva fica a conversa.</p>
-          <a class="process-call" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20come%C3%A7ar%20meu%20or%C3%A7amento." target="_blank" rel="noopener">Começar agora no WhatsApp →</a>
+          <h2 class="section-title" id="processo-title">15 anos ajudando obras na Zona Leste, Guarulhos e SP! Fábrica, estoque e entrega próprios.</h2>
         </div>
-        <ol class="steps">
-          <li>
-            <div><strong>Conte o serviço e o local</strong><p>Diga se é parede, forro, divisória ou outro projeto e informe seu bairro/cidade.</p></div>
-          </li>
-          <li>
-            <div><strong>Envie a medida ou 2 fotos</strong><p>Pode ser aproximado. Uma foto aberta e outra do detalhe já ajudam a entender o ambiente.</p></div>
-          </li>
-          <li>
-            <div><strong>Escolha como quer fechar</strong><p>Peça somente material e entrega ou inclua também a instalação.</p></div>
-          </li>
-        </ol>
+        <div class="delivery-gallery" aria-label="Estrutura e entregas da Gesso Recanto">
+          <figure>
+            <img src="assets/entrega-drywall-propria.jpeg" width="1201" height="1600" loading="lazy" decoding="async" alt="Caminhão da Gesso Recanto carregado com placas de drywall no estoque próprio">
+            <figcaption>Estoque e entrega próprios</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline preload="metadata" aria-label="Vídeo do caminhão da Gesso Recanto">
+              <source src="assets/caminhao-entrega-propria.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo. <a href="assets/caminhao-entrega-propria.mp4">Assista ao vídeo do caminhão</a>.
+            </video>
+            <figcaption>Entrega própria para sua obra</figcaption>
+          </figure>
+          <figure>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de gesso e entrega da Gesso Recanto">
+              <source src="assets/gesso-caminhao-proprio.mp4" type="video/mp4">
+              Seu navegador não reproduz este vídeo. <a href="assets/gesso-caminhao-proprio.mp4">Assista ao vídeo da entrega</a>.
+            </video>
+            <figcaption>Da fábrica até sua obra</figcaption>
+          </figure>
+        </div>
+        <a class="process-call" data-cta="estrutura-propria" href="https://wa.me/5511984965242?text=Ol%C3%A1%21%20Vi%20a%20estrutura%20e%20as%20entregas%20da%20Gesso%20Recanto.%20Quero%20um%20or%C3%A7amento%20de%20drywall%20para%20minha%20obra." target="_blank" rel="noopener">Peça seu orçamento no WhatsApp →</a>
       </div>
     </section>
 
