@@ -1,84 +1,72 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "gessorecantosp.com.br"
-        }
-      ],
-      "destination": "/principal/index.html"
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "continue": true
     },
     {
-      "source": "/robots.txt",
-      "has": [
-        {
-          "type": "host",
-          "value": "gessorecantosp.com.br"
-        }
-      ],
-      "destination": "/principal/robots.txt"
-    },
-    {
-      "source": "/sitemap.xml",
-      "has": [
-        {
-          "type": "host",
-          "value": "gessorecantosp.com.br"
-        }
-      ],
-      "destination": "/principal/sitemap.xml"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
-        }
-      ],
-      "destination": "/materiais/index.html"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
-        }
-      ],
-      "destination": "/materiais/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
+      "src": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.gessorecantosp.com.br"
         }
       ],
-      "destination": "https://gessorecantosp.com.br/:path*",
-      "permanent": true
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/$1"
+      },
+      "status": 308
+    },
+    {
+      "src": "/(?:index(?:\\.html)?)?",
+      "has": [
+        {
+          "type": "host",
+          "value": "gessorecantosp.com.br"
+        }
+      ],
+      "dest": "/principal/index.html"
+    },
+    {
+      "src": "/(robots\\.txt|sitemap\\.xml)",
+      "has": [
+        {
+          "type": "host",
+          "value": "gessorecantosp.com.br"
+        }
+      ],
+      "dest": "/principal/$1"
+    },
+    {
+      "src": "/(?:index(?:\\.html)?)?",
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ],
+      "dest": "/materiais/index.html"
+    },
+    {
+      "src": "/(assets/.*|styles\\.css|main\\.js|robots\\.txt|sitemap\\.xml)",
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ],
+      "dest": "/materiais/$1"
+    },
+    {
+      "src": "/(principal|materiais)/?",
+      "dest": "/$1/index.html"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }
