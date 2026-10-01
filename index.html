@@ -8,7 +8,7 @@
   <script src="main.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1b2a">
-  <meta name="description" content="Drywall, forros, paredes e divisórias com entrega e instalação em Ferraz de Vasconcelos. Envie a medida ou uma foto e peça seu orçamento pelo WhatsApp.">
+  <meta name="description" content="Drywall, forros, paredes e divisórias para toda São Paulo, com base em Ferraz de Vasconcelos. Consulte entrega e instalação e peça seu orçamento pelo WhatsApp.">
   <title>Gesso Recanto | Drywall, entrega e instalação</title>
   <link rel="canonical" href="https://obra-drywall.gessorecantosp.com.br/">
   <meta property="og:type" content="website">
@@ -47,11 +47,14 @@
       --line: #d9e2e9;
       --blue-light: #6ec1e4;
       --shadow: 0 22px 60px rgba(2, 15, 29, .28);
+      --header-height: 78px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
+
+    [id] { scroll-margin-top: calc(var(--header-height) + 20px); }
 
     body {
       margin: 0;
@@ -83,7 +86,7 @@
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: 100svh;
+      min-height: calc(100svh - var(--header-height));
       overflow: hidden;
       background-image:
         linear-gradient(90deg, rgba(4, 15, 25, .92) 0%, rgba(4, 15, 25, .82) 35%, rgba(4, 15, 25, .32) 68%, rgba(4, 15, 25, .08) 100%),
@@ -108,12 +111,21 @@
     }
 
     .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      padding-top: env(safe-area-inset-top, 0px);
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      background: rgba(7, 19, 30, .97);
+      backdrop-filter: blur(12px);
+    }
+
+    .site-header__inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      min-height: 94px;
-      border-bottom: 1px solid rgba(255,255,255,.15);
+      min-height: var(--header-height);
     }
 
     .brand-lockup {
@@ -155,10 +167,16 @@
       color: #e6eef6;
       font-size: .9rem;
       font-weight: 720;
+      text-align: right;
     }
+
+    .header-place > span { display: inline-flex; align-items: center; gap: 8px; }
+    .header-coverage { color: #a8daf4; }
+    .header-coverage::before { content: "·"; margin-right: 8px; }
 
     .header-place::before {
       content: "";
+      flex: 0 0 8px;
       width: 8px;
       height: 8px;
       border: 2px solid #79c8ef;
@@ -169,7 +187,7 @@
     .hero__content {
       display: grid;
       align-content: center;
-      min-height: calc(100svh - 94px);
+      min-height: calc(100svh - var(--header-height));
       padding: 64px 0 120px;
     }
 
@@ -824,6 +842,7 @@
     }
 
     @media (max-width: 760px) {
+      :root { --header-height: 72px; }
       .shell { width: min(100% - 28px, 680px); }
       .hero {
         background-image:
@@ -831,12 +850,14 @@
           url("assets/hero-drywall.webp");
         background-position: 61% center;
       }
-      .site-header { min-height: 78px; }
+      .site-header__inner { gap: 12px; }
       .brand-lockup img { width: 40px; height: 42px; }
       .brand-lockup strong { font-size: .9rem; }
       .brand-lockup small { display: none; }
       .header-place { font-size: .78rem; }
-      .hero__content { min-height: calc(100svh - 78px); padding: 48px 0 140px; }
+      .header-place > span { display: grid; gap: 1px; }
+      .header-coverage::before { content: none; }
+      .hero__content { min-height: calc(100svh - var(--header-height)); padding: 48px 0 140px; }
       .hero__copy { width: 100%; }
       h1 { font-size: clamp(2.28rem, 10vw, 4.1rem); line-height: 1; }
       .hero__lead { margin-top: 22px; font-size: 1.02rem; }
@@ -869,7 +890,9 @@
     }
 
     @media (max-width: 390px) {
-      .header-place { max-width: 116px; text-align: right; }
+      .brand-lockup { gap: 8px; }
+      .brand-lockup strong { max-width: 82px; font-size: .82rem; line-height: 1.2; }
+      .header-place { max-width: 142px; gap: 7px; font-size: .72rem; }
       .specialist-button { font-size: .8rem; }
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .service-card { min-height: 0; }
@@ -884,20 +907,22 @@
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand-lockup" href="#conteudo" aria-label="Gesso Recanto, início">
+        <img src="assets/logo-gesso-recanto.png" width="314" height="324" alt="Símbolo da Gesso Recanto">
+        <span>
+          <strong>Gesso Recanto</strong>
+          <small>Gesso &amp; Drywall</small>
+        </span>
+      </a>
+      <p class="header-place"><span><span>Ferraz de Vasconcelos</span><span class="header-coverage">Toda São Paulo</span></span></p>
+    </div>
+  </header>
+
   <main id="conteudo">
     <section class="hero" aria-labelledby="titulo-principal">
       <div class="shell">
-        <header class="site-header">
-          <a class="brand-lockup" href="#conteudo" aria-label="Gesso Recanto, início">
-            <img src="assets/logo-gesso-recanto.png" width="314" height="324" alt="Símbolo da Gesso Recanto">
-            <span>
-              <strong>Gesso Recanto</strong>
-              <small>Gesso &amp; Drywall</small>
-            </span>
-          </a>
-          <p class="header-place">Ferraz de Vasconcelos · SP</p>
-        </header>
-
         <div class="hero__content">
           <div class="hero__copy">
             <p class="eyebrow">Do material à instalação</p>
@@ -918,39 +943,6 @@
               <li>Orçamento direto</li>
             </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="offer" aria-labelledby="servicos-title">
-      <div class="shell">
-        <p class="section-kicker">Seu projeto começa aqui</p>
-        <h2 class="section-title" id="servicos-title">Diga o que você precisa. A gente já encaminha a solução certa.</h2>
-        <p class="section-lead">Clique no serviço para abrir o WhatsApp com a mensagem pronta. Se ainda estiver em dúvida, mande uma foto do ambiente.</p>
-
-        <div class="service-grid">
-          <a class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20parede%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Parede — pedir orçamento no WhatsApp">
-            <img src="assets/card-parede.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
-            <h3>Parede</h3>
-          </a>
-          <a class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20um%20forro%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Forro — pedir orçamento no WhatsApp">
-            <img src="assets/card-forro.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
-            <h3>Forro</h3>
-          </a>
-          <a class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20divis%C3%B3ria%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Divisória — pedir orçamento no WhatsApp">
-            <img src="assets/card-divisoria.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
-            <h3>Divisória</h3>
-          </a>
-          <a class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Tenho%20outro%20projeto%20em%20drywall%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Outro projeto — falar com especialista no WhatsApp">
-            <img src="assets/card-outro-projeto.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
-            <h3>Outro projeto</h3>
-          </a>
-        </div>
-
-        <div class="choice-panel" aria-label="Escolha entre material ou instalação completa">
-          <a href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20somente%20do%20material%20e%20da%20entrega." target="_blank" rel="noopener">Só material + entrega</a>
-          <a href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Quero%20material%20e%20instala%C3%A7%C3%A3o." target="_blank" rel="noopener">Material + instalação</a>
-          <p>Não precisa decidir tudo agora. O especialista ajuda você a organizar o pedido.</p>
         </div>
       </div>
     </section>
@@ -982,6 +974,39 @@
       </div>
     </section>
 
+    <section class="offer" aria-labelledby="servicos-title">
+      <div class="shell">
+        <p class="section-kicker">Seu projeto começa aqui</p>
+        <h2 class="section-title" id="servicos-title">Diga o que você precisa. A gente já encaminha a solução certa.</h2>
+        <p class="section-lead">Clique no serviço para abrir o WhatsApp com a mensagem pronta. Se ainda estiver em dúvida, mande uma foto do ambiente.</p>
+
+        <div class="service-grid">
+          <a data-cta="click_whatsapp_2" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20parede%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Parede — pedir orçamento no WhatsApp">
+            <img src="assets/card-parede.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <h3>Parede</h3>
+          </a>
+          <a data-cta="click_whatsapp_3" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20um%20forro%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Forro — pedir orçamento no WhatsApp">
+            <img src="assets/card-forro.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <h3>Forro</h3>
+          </a>
+          <a data-cta="click_whatsapp_4" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20divis%C3%B3ria%20de%20drywall%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Divisória — pedir orçamento no WhatsApp">
+            <img src="assets/card-divisoria.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <h3>Divisória</h3>
+          </a>
+          <a data-cta="click_whatsapp_5" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Tenho%20outro%20projeto%20em%20drywall%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Outro projeto — falar com especialista no WhatsApp">
+            <img src="assets/card-outro-projeto.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <h3>Outro projeto</h3>
+          </a>
+        </div>
+
+        <div class="choice-panel" aria-label="Escolha entre material ou instalação completa">
+          <a data-cta="click_whatsapp_6" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20somente%20do%20material%20e%20da%20entrega." target="_blank" rel="noopener">Só material + entrega</a>
+          <a data-cta="click_whatsapp_7" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Quero%20material%20e%20instala%C3%A7%C3%A3o." target="_blank" rel="noopener">Material + instalação</a>
+          <p>Não precisa decidir tudo agora. O especialista ajuda você a organizar o pedido.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="questions" aria-labelledby="duvidas-title">
       <div class="shell questions-inner">
         <p class="image-note">Imagem ilustrativa</p>
@@ -1003,7 +1028,7 @@
             </details>
             <details>
               <summary>Vocês atendem no meu endereço?</summary>
-              <p>A Gesso Recanto fica em Ferraz de Vasconcelos. Envie seu bairro e sua cidade pelo WhatsApp para confirmar o atendimento.</p>
+              <p>Atendemos toda São Paulo, com base em Ferraz de Vasconcelos. Envie seu bairro e sua cidade pelo WhatsApp para consultar entrega e instalação na sua região.</p>
             </details>
           </div>
           <a class="button button--whatsapp faq-cta" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20drywall." target="_blank" rel="noopener">
@@ -1033,7 +1058,7 @@
   <footer class="site-footer">
     <div class="shell footer-inner">
       <div class="footer-brand"><img src="assets/logo-gesso-recanto.png" width="314" height="324" alt=""> Gesso Recanto</div>
-      <p>Ferraz de Vasconcelos · SP · <a href="https://wa.me/5511984965242" target="_blank" rel="noopener">WhatsApp (11) 98496-5242</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Bruno%20Altafim%2035%20Ferraz%20de%20Vasconcelos%20SP" data-cta="maps_footer" target="_blank" rel="noopener">Ver no mapa</a></p>
+      <p>Ferraz de Vasconcelos · Toda São Paulo · <a href="https://wa.me/5511984965242" target="_blank" rel="noopener">WhatsApp (11) 98496-5242</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Bruno%20Altafim%2035%20Ferraz%20de%20Vasconcelos%20SP" data-cta="maps_footer" target="_blank" rel="noopener">Ver no mapa</a></p>
     </div>
   </footer>
 
