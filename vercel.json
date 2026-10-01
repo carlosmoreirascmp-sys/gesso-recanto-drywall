@@ -7,6 +7,36 @@
       "has": [
         {
           "type": "host",
+          "value": "gessorecantosp.com.br"
+        }
+      ],
+      "destination": "/principal/index.html"
+    },
+    {
+      "source": "/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "gessorecantosp.com.br"
+        }
+      ],
+      "destination": "/principal/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "has": [
+        {
+          "type": "host",
+          "value": "gessorecantosp.com.br"
+        }
+      ],
+      "destination": "/principal/sitemap.xml"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
           "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
         }
       ],
@@ -27,9 +57,28 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gessorecantosp.com.br"
+        }
+      ],
+      "destination": "https://gessorecantosp.com.br/:path*",
+      "permanent": true
     }
   ]
 }
