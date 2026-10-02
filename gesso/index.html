@@ -737,6 +737,38 @@
       .variety-showcase-video { max-width: 320px; margin: 0 auto; }
       .variety-showcase .btn { width: 100%; }
     }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-shrink: 0;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 6px;
+      color: #f3f8ff;
+      background: rgba(255,255,255,.04);
+      font-size: .8rem;
+      font-weight: 750;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s, border-color .2s;
+    }
+    .home-link:hover { background: rgba(255,255,255,.12); border-color: #8ad6f4; }
+    .home-link:focus-visible { outline: 3px solid #8ad6f4; outline-offset: 3px; }
+    .home-link > span { color: #8ad6f4; font-size: 1.05rem; }
+
+    .location-bar-inner { justify-content: space-between; }
+    .location-bar .home-link { min-height: 36px; padding: 7px 12px; }
+    .location-bar .top-location-link { min-width: 0; }
+    @media (max-width: 640px) {
+      .location-bar-inner { gap: 10px; }
+      .location-bar .home-link { padding: 7px 9px; font-size: .72rem; gap: 6px; }
+      .location-bar .top-location-link { flex: 1; font-size: .7rem; }
+    }
   </style>
 </head>
 <body>
@@ -744,6 +776,7 @@
     <div class="location-bar">
       <div class="wrap location-bar-inner">
         <a class="top-location-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Bruno%20Altafim%2035%20Ferraz%20de%20Vasconcelos%20SP" target="_blank" rel="noopener">Ferraz de Vasconcelos — Zona Leste e SP</a>
+        <a class="home-link" href="/" aria-label="Ir para o site principal da Gesso Recanto"><span aria-hidden="true">←</span> Site principal</a>
       </div>
     </div>
     <div class="wrap header-inner">
