@@ -1,13 +1,18 @@
-# Site principal e landing pages — Gesso Recanto
+# Gesso Recanto — site principal e serviços
 
-Páginas publicadas pelo mesmo projeto na Vercel:
+Páginas públicas no mesmo domínio e projeto Vercel:
 
-- Obra, fornecimento e instalação opcional: https://obra-drywall.gessorecantosp.com.br/
-- Materiais completos para drywall: https://materiaiscompletosdrywall.gessorecantosp.com.br/
+- Principal: https://gessorecantosp.com.br/
+- Gesso: https://gessorecantosp.com.br/gesso
+- Drywall e instalação: https://gessorecantosp.com.br/drywall
+- Materiais para drywall: https://gessorecantosp.com.br/materiais-drywall
 
-O `vercel.json` usa rotas por domínio antes da resolução de arquivos: o domínio
-principal abre `principal/index.html`, materiais abre `materiais/index.html` e o
-subdomínio de obra abre o `index.html` da raiz. Os arquivos de cada página mantêm
-seus próprios caminhos. Gessos permanece no projeto Vercel separado existente:
-https://gessos.gessorecantosp.com.br/.
-- Página inicial com todos os serviços: https://gessorecantosp.com.br/
+As rotas em `vercel.json` são avaliadas antes dos arquivos. A inicial está em
+`principal/`, gesso em `gesso/`, a página de drywall em `drywall/index.html`
+(usando os arquivos da raiz) e materiais em `materiais/`. Cada página usa
+caminhos absolutos para carregar suas mídias mesmo sem barra final no endereço.
+
+Os antigos subdomínios de obra e materiais redirecionam com HTTP 308 para os
+novos caminhos, preservando parâmetros de campanha. O subdomínio de gessos
+redireciona no projeto Vercel separado `gesso-recanto`. O sitemap inclui as
+quatro páginas e os eventos GA4 preservam os identificadores de cada serviço.

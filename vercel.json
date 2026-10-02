@@ -10,14 +10,114 @@
     },
     {
       "src": "/(.*)",
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/$1"
+      },
+      "status": 308,
       "has": [
         {
           "type": "host",
           "value": "www.gessorecantosp.com.br"
         }
-      ],
+      ]
+    },
+    {
+      "src": "/(?:index(?:\\.html)?)?",
       "headers": {
-        "Location": "https://gessorecantosp.com.br/$1"
+        "Location": "https://gessorecantosp.com.br/drywall"
+      },
+      "status": 308,
+      "has": [
+        {
+          "type": "host",
+          "value": "obra-drywall.gessorecantosp.com.br"
+        }
+      ]
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/drywall/$1"
+      },
+      "status": 308,
+      "has": [
+        {
+          "type": "host",
+          "value": "obra-drywall.gessorecantosp.com.br"
+        }
+      ]
+    },
+    {
+      "src": "/(?:materiais/?|index(?:\\.html)?)?",
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/materiais-drywall"
+      },
+      "status": 308,
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ]
+    },
+    {
+      "src": "/materiais/(.*)",
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/materiais-drywall/$1"
+      },
+      "status": 308,
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ]
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "Location": "https://gessorecantosp.com.br/materiais-drywall/$1"
+      },
+      "status": 308,
+      "has": [
+        {
+          "type": "host",
+          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
+        }
+      ]
+    },
+    {
+      "src": "/(drywall|gesso|materiais-drywall)/(?:index(?:\\.html)?)?",
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 308
+    },
+    {
+      "src": "/(driwal|driwall)/?",
+      "headers": {
+        "Location": "/drywall"
+      },
+      "status": 308
+    },
+    {
+      "src": "/gessos/?",
+      "headers": {
+        "Location": "/gesso"
+      },
+      "status": 308
+    },
+    {
+      "src": "/materiais(?:/index(?:\\.html)?)?/?",
+      "headers": {
+        "Location": "/materiais-drywall"
+      },
+      "status": 308
+    },
+    {
+      "src": "/principal(?:/index(?:\\.html)?)?/?",
+      "headers": {
+        "Location": "/"
       },
       "status": 308
     },
@@ -42,28 +142,20 @@
       "dest": "/principal/$1"
     },
     {
-      "src": "/(?:index(?:\\.html)?)?",
-      "has": [
-        {
-          "type": "host",
-          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
-        }
-      ],
+      "src": "/(drywall|gesso)",
+      "dest": "/$1/index.html"
+    },
+    {
+      "src": "/materiais-drywall",
       "dest": "/materiais/index.html"
     },
     {
-      "src": "/(assets/.*|styles\\.css|main\\.js|robots\\.txt|sitemap\\.xml)",
-      "has": [
-        {
-          "type": "host",
-          "value": "materiaiscompletosdrywall.gessorecantosp.com.br"
-        }
-      ],
-      "dest": "/materiais/$1"
+      "src": "/drywall/(assets/.*|styles\\.css|main\\.js|robots\\.txt|sitemap\\.xml)",
+      "dest": "/$1"
     },
     {
-      "src": "/(principal|materiais)/?",
-      "dest": "/$1/index.html"
+      "src": "/materiais-drywall/(.*)",
+      "dest": "/materiais/$1"
     },
     {
       "handle": "filesystem"

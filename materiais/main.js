@@ -3,7 +3,7 @@
   var host = window.location.hostname;
   var lp = host.indexOf('materiaiscompletosdrywall.') === 0 || window.location.pathname.indexOf('/materiais') === 0
     ? 'lp_materiais_drywall'
-    : host.indexOf('obra-drywall.') === 0
+    : host.indexOf('obra-drywall.') === 0 || window.location.pathname.indexOf('/drywall') === 0
       ? 'lp_obra_drywall'
       : 'lp_gesso';
   var debug = new URLSearchParams(window.location.search).has('ga_debug');
