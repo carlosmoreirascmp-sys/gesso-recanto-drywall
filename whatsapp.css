@@ -1,0 +1,111 @@
+/* Contact controls shared by the gesso and materials pages. */
+.wa-action {
+  gap: 12px;
+  min-height: 58px;
+  border: 0;
+  border-radius: 8px;
+  color: #062416;
+  background: #25d366;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, .12);
+}
+.wa-action:hover {
+  color: #062416;
+  background: #42e980;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, .2);
+}
+.wa-action::after { content: none; }
+.wa-contact-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+.wa-action:focus-visible,
+.contact-dock a:focus-visible {
+  outline: 3px solid #8ad6f4;
+  outline-offset: 4px;
+}
+.contact-dock {
+  position: fixed;
+  z-index: 40;
+  right: 22px;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, .3));
+}
+.contact-specialist {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 58px;
+  max-width: 275px;
+  padding: 12px 22px 12px 18px;
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  color: #071722;
+  background: #f6f8fa;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.28;
+}
+.contact-specialist::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 9px;
+  height: 30px;
+  background: #02488d;
+  animation: contact-specialist-pulse 1.8s ease-in-out infinite;
+}
+.contact-specialist:hover { background: #e6f2fa; }
+.contact-whatsapp {
+  display: grid;
+  flex: 0 0 58px;
+  width: 58px;
+  min-height: 58px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #25d366;
+  text-decoration: none;
+  animation: contact-whatsapp-breathe 2.4s ease-in-out infinite;
+}
+.contact-whatsapp:hover { background: #42e980; }
+.contact-whatsapp .wa-contact-icon { width: 31px; height: 31px; }
+body:has(.contact-dock) { padding-bottom: 90px; }
+@keyframes contact-specialist-pulse {
+  0%, 100% { opacity: .35; transform: scaleY(.58); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+@keyframes contact-whatsapp-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .36), inset 0 -4px 0 rgba(0, 0, 0, .11); }
+  50% { box-shadow: 0 0 0 11px rgba(37, 211, 102, 0), inset 0 -4px 0 rgba(0, 0, 0, .11); }
+}
+@media (max-width: 760px) {
+  .wa-action { min-height: 54px; padding: 15px 13px; font-size: 13px; }
+  .contact-dock {
+    right: 14px;
+    left: 14px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  .contact-specialist {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    min-height: 54px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .contact-whatsapp { flex-basis: 54px; width: 54px; min-height: 54px; }
+}
+@media (max-width: 350px) {
+  .contact-specialist { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-specialist::before,
+  .contact-whatsapp { animation: none; }
+}
