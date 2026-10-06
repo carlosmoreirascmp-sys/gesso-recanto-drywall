@@ -16,7 +16,7 @@
   <meta property="og:description" content="Parede, forro, divisória e outros projetos em drywall, com fornecimento, entrega e instalação opcional.">
   <meta property="og:url" content="https://gessorecantosp.com.br/drywall">
   <meta property="og:image" content="https://gessorecantosp.com.br/drywall/assets/hero-drywall.webp">
-  <link rel="preload" href="/drywall/assets/hero-drywall.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="/drywall/assets/hero-drywall-opt.avif" as="image" type="image/avif" fetchpriority="high">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2302488D'/%3E%3Cpath d='M13 17 31 8l20 9v27L32 56 13 44Z' fill='none' stroke='white' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M13 17 32 29l19-12M32 29v27' fill='none' stroke='white' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
   <script type="application/ld+json">
   {
@@ -91,6 +91,10 @@
         linear-gradient(90deg, rgba(4, 15, 25, .92) 0%, rgba(4, 15, 25, .82) 35%, rgba(4, 15, 25, .32) 68%, rgba(4, 15, 25, .08) 100%),
         linear-gradient(0deg, rgba(4, 15, 25, .7) 0%, transparent 34%),
         url("/drywall/assets/hero-drywall.webp");
+      background-image:
+        linear-gradient(90deg, rgba(4, 15, 25, .92) 0%, rgba(4, 15, 25, .82) 35%, rgba(4, 15, 25, .32) 68%, rgba(4, 15, 25, .08) 100%),
+        linear-gradient(0deg, rgba(4, 15, 25, .7) 0%, transparent 34%),
+        image-set(url("/drywall/assets/hero-drywall-opt.avif") type("image/avif"), url("/drywall/assets/hero-drywall.webp") type("image/webp"));
       background-position: center;
       background-size: cover;
     }
@@ -847,6 +851,9 @@
         background-image:
           linear-gradient(180deg, rgba(4,15,25,.76) 0%, rgba(4,15,25,.72) 30%, rgba(4,15,25,.93) 82%, rgba(4,15,25,.98) 100%),
           url("/drywall/assets/hero-drywall.webp");
+      background-image:
+          linear-gradient(180deg, rgba(4,15,25,.76) 0%, rgba(4,15,25,.72) 30%, rgba(4,15,25,.93) 82%, rgba(4,15,25,.98) 100%),
+          image-set(url("/drywall/assets/hero-drywall-opt.avif") type("image/avif"), url("/drywall/assets/hero-drywall.webp") type("image/webp"));
         background-position: 61% center;
       }
       .site-header__inner { gap: 12px; }
@@ -941,7 +948,7 @@
   <header class="site-header">
     <div class="shell site-header__inner">
       <a class="brand-lockup" href="#conteudo" aria-label="Gesso Recanto, início">
-        <img src="/drywall/assets/logo-gesso-recanto.png" width="314" height="324" alt="Símbolo da Gesso Recanto">
+        <img src="/drywall/assets/logo-gesso-recanto-opt.webp" width="314" height="324" alt="Símbolo da Gesso Recanto">
         <span>
           <strong>Gesso Recanto</strong>
           <small>Gesso &amp; Drywall</small>
@@ -958,7 +965,7 @@
           <div class="hero__copy">
             <p class="eyebrow">Do material à instalação</p>
             <h1 id="titulo-principal">Parede, forro, divisória ou qualquer modelo de drywall — a gente entrega rápido e, se quiser, também instala.</h1>
-            <p class="hero__lead">Do orçamento à instalação, sem você correr atrás de mais ninguém pra fechar a obra. Atendimento na sua região.</p>
+            <p class="hero__lead">Material, entrega e instalação com uma só empresa. Atendemos sua obra do orçamento à execução.</p>
 
             <div class="hero__actions">
               <a class="button button--whatsapp" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Gesso%20Recanto.%20Preciso%20de%20drywall%20em%20%5Bbairro%2Fcidade%5D.%20Posso%20enviar%20as%20medidas%20e%20fotos%3F%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Peça sua medida e orçamento no WhatsApp da Gesso Recanto">
@@ -985,13 +992,13 @@
         </div>
         <div class="delivery-gallery" aria-label="Estrutura e entregas da Gesso Recanto">
           <figure>
-            <video controls playsinline preload="metadata" poster="/drywall/assets/caminhao-entrega-capa.jpg" aria-label="Vídeo do caminhão da Gesso Recanto, sem interface de celular">
+            <video controls playsinline preload="none" poster="/drywall/assets/caminhao-entrega-capa.jpg" aria-label="Vídeo do caminhão da Gesso Recanto, sem interface de celular">
               <source src="/drywall/assets/caminhao-entrega-editado.mp4" type="video/mp4">
               Seu navegador não reproduz este vídeo. <a href="/drywall/assets/caminhao-entrega-editado.mp4">Assista ao vídeo do caminhão</a>.
             </video>
           </figure>
           <figure>
-            <video controls playsinline preload="metadata" poster="/drywall/assets/gesso-caminhao-capa.jpg" aria-label="Vídeo de entrega da Gesso Recanto, sem interface de celular">
+            <video controls playsinline preload="none" poster="/drywall/assets/gesso-caminhao-capa.jpg" aria-label="Vídeo de entrega da Gesso Recanto, sem interface de celular">
               <source src="/drywall/assets/gesso-caminhao-editado.mp4" type="video/mp4">
               Seu navegador não reproduz este vídeo. <a href="/drywall/assets/gesso-caminhao-editado.mp4">Assista ao vídeo da entrega</a>.
             </video>
@@ -999,7 +1006,7 @@
         </div>
         <div class="delivery-photo">
           <h3>Fábrica, estoque e entrega próprios.</h3>
-          <img src="/drywall/assets/entrega-drywall-propria.jpeg" width="1201" height="1600" loading="lazy" decoding="async" alt="Foto completa do caminhão da Gesso Recanto carregado com placas de drywall no estoque próprio">
+          <img src="/drywall/assets/entrega-drywall-900.webp" srcset="/drywall/assets/entrega-drywall-600.webp 600w, /drywall/assets/entrega-drywall-900.webp 900w, /drywall/assets/entrega-drywall-propria.jpeg 1201w" sizes="(max-width: 760px) 278px, 346px" width="1201" height="1600" loading="lazy" decoding="async" alt="Foto completa do caminhão da Gesso Recanto carregado com placas de drywall no estoque próprio">
         </div>
         <a class="process-call" data-cta="estrutura-propria" href="https://wa.me/5511984965242?text=Ol%C3%A1!%20Vi%20a%20estrutura%20e%20as%20entregas%20da%20Gesso%20Recanto.%20Quero%20um%20or%C3%A7amento%20de%20drywall%20para%20minha%20obra.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener">Peça seu orçamento no WhatsApp →</a>
       </div>
@@ -1013,19 +1020,19 @@
 
         <div class="service-grid">
           <a data-cta="click_whatsapp_2" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20parede%20de%20drywall%20e%20quero%20um%20or%C3%A7amento.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Parede — pedir orçamento no WhatsApp">
-            <img src="/drywall/assets/card-parede.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <img src="/drywall/assets/card-parede.webp" srcset="/drywall/assets/card-parede-400.webp 400w, /drywall/assets/card-parede-640.webp 640w, /drywall/assets/card-parede.webp 960w" sizes="(max-width: 708px) calc((100vw - 38px) / 2), (max-width: 760px) 335px, (max-width: 1220px) calc((100vw - 82px) / 4), 285px" width="960" height="960" alt="" loading="lazy" decoding="async">
             <h3>Parede</h3>
           </a>
           <a data-cta="click_whatsapp_3" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20um%20forro%20de%20drywall%20e%20quero%20um%20or%C3%A7amento.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Forro — pedir orçamento no WhatsApp">
-            <img src="/drywall/assets/card-forro.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <img src="/drywall/assets/card-forro.webp" srcset="/drywall/assets/card-forro-400.webp 400w, /drywall/assets/card-forro-640.webp 640w, /drywall/assets/card-forro.webp 960w" sizes="(max-width: 708px) calc((100vw - 38px) / 2), (max-width: 760px) 335px, (max-width: 1220px) calc((100vw - 82px) / 4), 285px" width="960" height="960" alt="" loading="lazy" decoding="async">
             <h3>Forro</h3>
           </a>
           <a data-cta="click_whatsapp_4" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Preciso%20de%20uma%20divis%C3%B3ria%20de%20drywall%20e%20quero%20um%20or%C3%A7amento.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Divisória — pedir orçamento no WhatsApp">
-            <img src="/drywall/assets/card-divisoria.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <img src="/drywall/assets/card-divisoria.webp" srcset="/drywall/assets/card-divisoria-400.webp 400w, /drywall/assets/card-divisoria-640.webp 640w, /drywall/assets/card-divisoria.webp 960w" sizes="(max-width: 708px) calc((100vw - 38px) / 2), (max-width: 760px) 335px, (max-width: 1220px) calc((100vw - 82px) / 4), 285px" width="960" height="960" alt="" loading="lazy" decoding="async">
             <h3>Divisória</h3>
           </a>
           <a data-cta="click_whatsapp_5" class="service-card" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site.%20Tenho%20outro%20projeto%20em%20drywall%20e%20gostaria%20de%20falar%20com%20um%20especialista.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Outro projeto — falar com especialista no WhatsApp">
-            <img src="/drywall/assets/card-outro-projeto.webp" width="960" height="960" alt="" loading="lazy" decoding="async">
+            <img src="/drywall/assets/card-outro-projeto.webp" srcset="/drywall/assets/card-outro-projeto-400.webp 400w, /drywall/assets/card-outro-projeto-640.webp 640w, /drywall/assets/card-outro-projeto.webp 960w" sizes="(max-width: 708px) calc((100vw - 38px) / 2), (max-width: 760px) 335px, (max-width: 1220px) calc((100vw - 82px) / 4), 285px" width="960" height="960" alt="" loading="lazy" decoding="async">
             <h3>Outro projeto</h3>
           </a>
         </div>
@@ -1088,7 +1095,7 @@
 
   <footer class="site-footer">
     <div class="shell footer-inner">
-      <div class="footer-brand"><img src="/drywall/assets/logo-gesso-recanto.png" width="314" height="324" alt=""> Gesso Recanto</div>
+      <div class="footer-brand"><img src="/drywall/assets/logo-gesso-recanto-opt.webp" width="314" height="324" alt=""> Gesso Recanto</div>
       <p>Ferraz de Vasconcelos · Toda São Paulo · <a href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Gesso%20Recanto.%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener">WhatsApp (11) 98496-5242</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Bruno%20Altafim%2035%20Ferraz%20de%20Vasconcelos%20SP" data-cta="maps_footer" target="_blank" rel="noopener">Ver no mapa</a></p>
     </div>
   </footer>
