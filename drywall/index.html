@@ -280,12 +280,25 @@
     }
 
     .hero__hint {
-      width: min(310px, 100%);
+      width: min(540px, 100%);
       margin: 0;
       color: #b9c8d4;
       font-size: .9rem;
       line-height: 1.48;
     }
+
+    .hero__actions { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .hero__material {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      color: #a8daf4;
+      font-size: .9rem;
+      font-weight: 650;
+      text-underline-offset: 4px;
+    }
+    .hero__material:hover { color: #fff; }
+    .hero__material:focus-visible { outline: 2px solid #a8daf4; outline-offset: 4px; }
 
     .proof-row {
       display: flex;
@@ -963,21 +976,22 @@
       <div class="shell">
         <div class="hero__content">
           <div class="hero__copy">
-            <p class="eyebrow">Do material à instalação</p>
-            <h1 id="titulo-principal">Parede, forro, divisória ou qualquer modelo de drywall — a gente entrega rápido e, se quiser, também instala.</h1>
+            <p class="eyebrow">Material + mão de obra em drywall</p>
+            <h1 id="titulo-principal">Parede, Forro ou Divisória em Drywall? Envie uma foto e peça seu orçamento.</h1>
             <p class="hero__lead">Material, entrega e instalação com uma só empresa. Atendemos sua obra do orçamento à execução.</p>
 
             <div class="hero__actions">
-              <a class="button button--whatsapp" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Gesso%20Recanto.%20Preciso%20de%20drywall%20em%20%5Bbairro%2Fcidade%5D.%20Posso%20enviar%20as%20medidas%20e%20fotos%3F%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Peça sua medida e orçamento no WhatsApp da Gesso Recanto">
+              <a class="button button--whatsapp" href="https://wa.me/5511984965242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Gesso%20Recanto.%20Preciso%20de%20drywall%20em%20%5Bbairro%2Fcidade%5D.%20Posso%20enviar%20as%20medidas%20e%20fotos%3F%20Quero%20falar%20com%20especialista%20em%20drywall." target="_blank" rel="noopener" aria-label="Enviar foto e pedir orçamento no WhatsApp da Gesso Recanto">
                 <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.43 14.91L2.05 22l5.2-1.52A9.9 9.9 0 1 0 12.04 2Zm0 17.98a8.14 8.14 0 0 1-4.15-1.14l-.3-.18-3.08.9.82-3-.2-.31a8.15 8.15 0 1 1 6.91 3.73Zm4.47-6.1c-.24-.12-1.45-.72-1.67-.8-.23-.08-.39-.12-.56.12-.16.25-.63.8-.78.96-.14.17-.28.19-.52.07-.25-.12-1.03-.38-1.96-1.21-.73-.65-1.22-1.45-1.36-1.69-.15-.24-.02-.37.1-.49.11-.11.25-.28.37-.43.12-.14.16-.24.25-.41.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.3-.23.25-.86.84-.86 2.05 0 1.2.88 2.37 1 2.53.13.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.28Z"/></svg>
-                Peça sua medida e orçamento no WhatsApp
+                ENVIAR FOTO E PEDIR ORÇAMENTO
               </a>
-              <p class="hero__hint">Manda a medida ou a foto do ambiente e te respondemos rápido.</p>
+              <p class="hero__hint">Não sabe a medida exata? Sem problema. Envie uma foto, seu bairro e uma medida aproximada.</p>
+              <a class="hero__material" href="/materiais-drywall">Preciso somente do material →</a>
             </div>
 
             <ul class="proof-row" aria-label="Opções de atendimento">
               <li>Material e entrega</li>
-              <li>Instalação opcional</li>
+              <li>Mão de obra em drywall</li>
               <li>Orçamento direto</li>
             </ul>
           </div>
