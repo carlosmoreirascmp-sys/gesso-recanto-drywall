@@ -51,6 +51,4 @@ document.querySelector('#viewer-prev').addEventListener('click',()=>moveViewer(-
 dialog.addEventListener('close',()=>{clearViewer();document.body.classList.remove('viewer-open');lastTrigger?.focus();});dialog.addEventListener('click',e=>{if(e.target===dialog){const rect=dialog.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)dialog.close();}});
 document.addEventListener('keydown',e=>{if(dialog.open){if(e.key==='ArrowRight'){e.preventDefault();moveViewer(1);}if(e.key==='ArrowLeft'){e.preventDefault();moveViewer(-1);}}if(e.key==='Escape')document.querySelector('.services-menu').open=false;});
 const menu=document.querySelector('.services-menu');document.addEventListener('click',e=>{if(!menu.contains(e.target))menu.open=false;});
-document.querySelectorAll('.whatsapp-link').forEach(a=>a.addEventListener('click',()=>track('click_whatsapp',{cta_location:a.dataset.location,link_url:a.href})));
-document.querySelectorAll('a[data-location]:not(.whatsapp-link)').forEach(a=>a.addEventListener('click',()=>track(a.dataset.location==='maps'?'click_maps':'click_service_page',{cta_location:a.dataset.location,link_url:a.href})));
 renderGallery();
