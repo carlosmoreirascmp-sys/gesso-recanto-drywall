@@ -57,6 +57,10 @@
     // No WhatsApp message text or phone number is copied into event parameters.
     if (type === 'click_service_page') params.destination_path = url.pathname;
     send(type, params);
+    if (type === 'click_whatsapp' && !debug && typeof window.gtag === 'function') {
+      // This secondary Ads action measures opening WhatsApp from the site.
+      window.gtag('event', 'conversion', { send_to: 'AW-18480970404/3MNpCMrTob4dEKT1tOxE' });
+    }
   }
   document.addEventListener('click', onLink);
   document.addEventListener('auxclick', onLink);
